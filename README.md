@@ -1,1 +1,1 @@
-# Sistemas-Estoc-sticos
+# Sistemas-Estocasticos
