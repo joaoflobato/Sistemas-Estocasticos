@@ -6,7 +6,6 @@ addpath("../../Classes","../../Funções/")
 
 load("Variáveis/amortecedores.mat");
 
-qtd_amortecedores = numel(amortecedores);
 
 fatores_amort = amortecedores/amortecimento_crit;
 legendas_amort = "\zeta = "+fatores_amort;
@@ -50,8 +49,7 @@ plot(tempos,desv_pad_deste_amort_norm,LineWidth=3)
 %Gráfico das distâncias de Wasserstein
 subplot(2,3,3)
 
-passo = 0.02;
-total_passos = (tempos(end) - tempos(1))/passo + 1;
+total_passos = (tempo_final - tempo_inicial)/passo + 1;
 indices_analise = 1:1000:total_passos;
 
 ordem_Wassertein = 2;

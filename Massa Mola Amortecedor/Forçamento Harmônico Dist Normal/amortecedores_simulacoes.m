@@ -5,8 +5,10 @@ amortecedores = [0.2,0.5,2,5,20];
 respostas_diferentes_amort = [];
 media_respostas = [];
 desvio_padrao_respostas = [];
+qtd_amortecedores = numel(amortecedores);
 
-for i = 1:numel(amortecedores)
+tic;
+for i = 1:qtd_amortecedores
     
     const_amortecedor = amortecedores(i);
 
@@ -24,11 +26,16 @@ for i = 1:numel(amortecedores)
 
         respostas_diferentes_amort(:,j,i) = sist_mma.posicoes;
 
+        ExibirProgresso(i,qtd_amortecedores,j,contagem_amostras)
+
 
     end
 
 end
+tempo_execucao = toc;
+fprintf("Tempo de execução: %.3f s\n",tempo_execucao)
 
 save("Variáveis/amortecedores.mat", ...
     "amortecedores","respostas_diferentes_amort", ...
-    "amortecimento_crit","tempos");
+    "amortecimento_crit","tempos","passo","tempo_inicial", ...
+    "tempo_final","tempo_execucao","qtd_amortecedores");
