@@ -19,7 +19,7 @@ graficoEnvelope(tempos,media_posicoes,borda,legendas)
 subplot(1,2,2)
 
 borda = desvio_padrao_posicoes;
-legendas = ["Gráfico envelope das respostas","Tempo(s)","Posição(m)","\mu_x + \sigma_x","\mu_x"];
+legendas([1,3]) = ["Gráfico envelope das respostas","Posição(m)"];
 
 
 
