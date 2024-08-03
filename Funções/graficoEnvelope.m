@@ -16,7 +16,7 @@ end
 topo = media+borda;
 base = media-borda;
 hold on
-    h1 = plot(tempo,media,'b','LineWidth',2);
+    h1 = plot(tempo,media,'b','LineWidth',3);
     h2 = fill([tempo fliplr(tempo)],[topo fliplr(base)],[0.7 0.9 1.0]);
 hold off
 
@@ -25,7 +25,7 @@ uistack(h1,'top');
 title(legendas(1),FontSize=20)
 xlabel(legendas(2),FontSize=20);
 ylabel(legendas(3),FontSize=20);
-leg = legend(legendas(4),legendas(5));
+leg = legend([legendas(4),legendas(5)],FontSize=15);
 grid on
 
 end
