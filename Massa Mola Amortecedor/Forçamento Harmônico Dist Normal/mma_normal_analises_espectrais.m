@@ -48,31 +48,39 @@ subplot(2,2,1)
 colormap jet
 surf(T1,T2,media_conj_forcamentos_mg)
 
-xlabel("t_1 (s)")
-ylabel("t_2 (s)")
-zlabel("r_F(t_1,t_2) (N)")
+title(["Média conjunta dos forçamentos"],FontSize=20)
+
+xlabel("t_1 (s)",FontSize=15)
+ylabel("t_2 (s)",FontSize=15)
+zlabel("r_F(t_1,t_2) (N)",FontSize=15)
 
 subplot(2,2,2)
 
 surf(T1,T2,media_conj_respostas_mg)
 
-xlabel("t_1 (s)")
-ylabel("t_2 (s)")
-zlabel("r_F(t_1,t_2) (N)")
+title(["Média conjunta das respostas"],FontSize=20)
+
+xlabel("t_1 (s)",FontSize=15)
+ylabel("t_2 (s)",FontSize=15)
+zlabel("r_X(t_1,t_2) (m)",FontSize=15)
 
 subplot(2,2,3)
 imagesc(tempos_mg,tempos_mg,media_conj_forcamentos_mg)
 colorbar
 
-xlabel("t (s)")
-ylabel("t + \tau (s)")
+title(["Média conjunta dos forçamentos"],FontSize=20)
+
+xlabel("t (s)",FontSize=15)
+ylabel("t + \tau (s)",FontSize=15)
 
 subplot(2,2,4)
 imagesc(tempos_mg,tempos_mg,media_conj_respostas_mg)
 colorbar
 
-xlabel("t (s)")
-ylabel("t + \tau (s)")
+title(["Média conjunta das respostas"],FontSize=20)
+
+xlabel("t (s)",FontSize=15)
+ylabel("t + \tau (s)",FontSize=15)
 
 
 
@@ -109,32 +117,31 @@ figura3.Position = [5,304,1913,431];
 subplot(1,3,1)
 stem(varredura_freq_resp,sinal_freq_resp)
 xlim([-1/2,1/2])
+xticks([-0.5,-0.32,0,0.32,0.5])
 
-title(["Densidade espectral da resposta";"ao forçamento estocástico"],FontSize=15)
+title(["Densidade espectral da resposta";"ao forçamento estocástico"],FontSize=20)
 
-xlabel("Frequência (Hz)",FontSize=15)
-ylabel("Posição(\omega)",FontSize=15)
+xlabel("Frequência (Hz)",FontSize=20)
+ylabel("Posição(\omega)",FontSize=20)
 
 
 subplot(1,3,2)
 stem(varredura_freq_imp,sinal_freq_imp_quad)
 xlim([-1/2,1/2])
+xticks([-0.5,-0.16,0,0.16,0.5])
 
-title(["Densidade espectral da resposta";"ao impulso unitário"],FontSize=15)
+title(["Densidade espectral da resposta";"ao impulso unitário"],FontSize=20)
 
-xlabel("Frequência (Hz)",FontSize=15)
-ylabel("|h(\omega)|^2",FontSize=15)
+xlabel("Frequência (Hz)",FontSize=20)
+ylabel("|h(\omega)|^2",FontSize=20)
 
 
 subplot(1,3,3)
 stem(varredura_freq_forca,sinal_freq_forca)
 xlim([-1/2,1/2])
+xticks([-0.5,-0.32,0,0.32,0.5])
 
-title(["Densidade espectral do";"forçamento estocástico"],FontSize=15)
+title(["Densidade espectral do";"forçamento estocástico"],FontSize=20)
 
-xlabel("Frequência (Hz)",FontSize=15)
-ylabel("Força(\omega)",FontSize=15)
-
-figure
-stem(varredura_freq_forca,sinal_freq_imp_quad.*sinal_freq_forca)
-xlim([-1/2,1/2])
+xlabel("Frequência (Hz)",FontSize=20)
+ylabel("Força(\omega)",FontSize=20)
