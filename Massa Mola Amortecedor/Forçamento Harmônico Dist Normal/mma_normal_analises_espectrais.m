@@ -48,39 +48,39 @@ subplot(2,2,1)
 colormap jet
 surf(T1,T2,media_conj_forcamentos_mg)
 
-title(["Média conjunta dos forçamentos"],FontSize=20)
+title(["Média conjunta"; "dos forçamentos"],FontSize=20)
 
-xlabel("t_1 (s)",FontSize=15)
-ylabel("t_2 (s)",FontSize=15)
-zlabel("r_F(t_1,t_2) (N)",FontSize=15)
+xlabel("t_1 (s)",FontSize=20)
+ylabel("t_2 (s)",FontSize=20)
+zlabel("r_F(t_1,t_2) (N)",FontSize=20)
 
 subplot(2,2,2)
 
 surf(T1,T2,media_conj_respostas_mg)
 
-title(["Média conjunta das respostas"],FontSize=20)
+title(["Média conjunta";"das respostas"],FontSize=20)
 
-xlabel("t_1 (s)",FontSize=15)
-ylabel("t_2 (s)",FontSize=15)
-zlabel("r_X(t_1,t_2) (m)",FontSize=15)
+xlabel("t_1 (s)",FontSize=20)
+ylabel("t_2 (s)",FontSize=20)
+zlabel("r_X(t_1,t_2) (m)",FontSize=20)
 
 subplot(2,2,3)
 imagesc(tempos_mg,tempos_mg,media_conj_forcamentos_mg)
 colorbar
 
-title(["Média conjunta dos forçamentos"],FontSize=20)
+title(["Média conjunta";"dos forçamentos"],FontSize=20)
 
-xlabel("t (s)",FontSize=15)
-ylabel("t + \tau (s)",FontSize=15)
+xlabel("t (s)",FontSize=20)
+ylabel("t + \tau (s)",FontSize=20)
 
 subplot(2,2,4)
 imagesc(tempos_mg,tempos_mg,media_conj_respostas_mg)
 colorbar
 
-title(["Média conjunta das respostas"],FontSize=20)
+title(["Média conjunta";"das respostas"],FontSize=20)
 
-xlabel("t (s)",FontSize=15)
-ylabel("t + \tau (s)",FontSize=15)
+xlabel("t (s)",FontSize=20)
+ylabel("t + \tau (s)",FontSize=20)
 
 
 
@@ -90,20 +90,20 @@ figura2 = figure;
 figura2.Position = [308,287,1226,427];
 
 subplot(1,2,1)
-plot(tempos,media_conj_forcamentos_diag)
+plot(tempos,media_conj_forcamentos_diag,LineWidth=2)
 
-title(["Diagonal das médias";"conjuntas dos forçamentos"],FontSize=15)
+title(["Diagonal das médias";"conjuntas dos forçamentos"],FontSize=20)
 
-xlabel("\tau (s)",FontSize=15)
-ylabel("Força (N)",FontSize=15)
+xlabel("\tau (s)",FontSize=20)
+ylabel("Força (N)",FontSize=20)
 
 subplot(1,2,2)
-plot(tempos,media_conj_respostas_diag)
+plot(tempos,media_conj_respostas_diag,LineWidth=2)
 
-title(["Diagonal das médias";"conjuntas das respostas"],FontSize=15)
+title(["Diagonal das médias";"conjuntas das respostas"],FontSize=20)
 
-xlabel("\tau (s)",FontSize=15)
-ylabel("Posição (m)",FontSize=15)
+xlabel("\tau (s)",FontSize=20)
+ylabel("Posição (m)",FontSize=20)
 
 
 
