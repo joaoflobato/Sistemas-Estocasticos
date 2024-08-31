@@ -9,7 +9,7 @@ ordem_Wassertein = 2;
 dists_W = distanciasWasserstein(respostas(indices_analise,:),ordem_Wassertein);
 
 figura = figure;
-figura.Position = [417,108,1138,850];
+figura.Position = [733,291,639,502];
 
 
 semilogy(tempos(indices_analise(2:end)),dists_W,LineWidth=3)

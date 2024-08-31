@@ -11,7 +11,7 @@ for i = 1:numel(instantes_analise)
     indice_tempo_atual = tempos == instante_atual;
     posicoes_tempo_atual = respostas(indice_tempo_atual,:); 
     
-    titulo = ["Histograma Normalizado";sprintf(["das Respostas em t = %.1f s"],instante_atual)];
+    titulo = ["Histograma Normalizado";sprintf(["das Respostas em t = %.0f s"],instante_atual)];
 
     subplot(2,3,i)
     gerarHistograma(posicoes_tempo_atual,qtd_urnas, ...

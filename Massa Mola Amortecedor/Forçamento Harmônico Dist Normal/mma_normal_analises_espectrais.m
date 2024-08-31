@@ -39,6 +39,8 @@ media_conj_respostas_mg = media_conj_respostas(1:fator_engrossamento:end,1:fator
 [T1,T2] = meshgrid(tempos_mg,tempos_mg);
 %%
 %Gráficos
+legenda_correl_forcas = ["Correlação"; "do forçamento"];
+legenda_correl_resp = ["Correlação";"da resposta"];
 
 figura1 = figure;
 figura1.Position = [327,91,1201,866];
@@ -48,7 +50,7 @@ subplot(2,2,1)
 colormap jet
 surf(T1,T2,media_conj_forcamentos_mg)
 
-title(["Média conjunta"; "dos forçamentos"],FontSize=20)
+title(legenda_correl_forcas,FontSize=20)
 
 xlabel("t_1 (s)",FontSize=20)
 ylabel("t_2 (s)",FontSize=20)
@@ -58,7 +60,7 @@ subplot(2,2,2)
 
 surf(T1,T2,media_conj_respostas_mg)
 
-title(["Média conjunta";"das respostas"],FontSize=20)
+title(legenda_correl_resp,FontSize=20)
 
 xlabel("t_1 (s)",FontSize=20)
 ylabel("t_2 (s)",FontSize=20)
@@ -68,7 +70,7 @@ subplot(2,2,3)
 imagesc(tempos_mg,tempos_mg,media_conj_forcamentos_mg)
 colorbar
 
-title(["Média conjunta";"dos forçamentos"],FontSize=20)
+title(legenda_correl_forcas,FontSize=20)
 
 xlabel("t (s)",FontSize=20)
 ylabel("t + \tau (s)",FontSize=20)
@@ -77,7 +79,7 @@ subplot(2,2,4)
 imagesc(tempos_mg,tempos_mg,media_conj_respostas_mg)
 colorbar
 
-title(["Média conjunta";"das respostas"],FontSize=20)
+title(legenda_correl_resp,FontSize=20)
 
 xlabel("t (s)",FontSize=20)
 ylabel("t + \tau (s)",FontSize=20)
@@ -92,7 +94,7 @@ figura2.Position = [308,287,1226,427];
 subplot(1,2,1)
 plot(tempos,media_conj_forcamentos_diag,LineWidth=2)
 
-title(["Diagonal das médias";"conjuntas dos forçamentos"],FontSize=20)
+title(["Diagonal da correlação";"do forçamento"],FontSize=20)
 
 xlabel("\tau (s)",FontSize=20)
 ylabel("Força (N)",FontSize=20)
@@ -100,7 +102,7 @@ ylabel("Força (N)",FontSize=20)
 subplot(1,2,2)
 plot(tempos,media_conj_respostas_diag,LineWidth=2)
 
-title(["Diagonal das médias";"conjuntas das respostas"],FontSize=20)
+title(["Diagonal da correlação";"da resposta"],FontSize=20)
 
 xlabel("\tau (s)",FontSize=20)
 ylabel("Posição (m)",FontSize=20)
