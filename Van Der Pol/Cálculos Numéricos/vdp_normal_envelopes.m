@@ -14,7 +14,6 @@ legendas = ["Gráfico envelope dos forçamentos","Tempo(s)","Força(N)","\mu_F \
 
 graficoEnvelope(tempos,media_forcamentos,borda,legendas)
 
-graficoEnvelope(tempos,media_posicoes,borda,legendas)
 
 subplot(1,2,2)
 
