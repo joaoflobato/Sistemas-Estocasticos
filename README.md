@@ -4,4 +4,4 @@ As rotinas deste repositório têm como objetivos representar as respostas siste
 
 Os programas de simulações devem ser executados completamente antes dos arquivos de pós-processamento. As simulações podem levar de 5 a 10 minutos, dependendo do seu computador. Em seguida, os resultados serão salvos em um arquivo binário. A partir daí, será possível executar as rotinas de pós-processamento.
 
-ATENÇÃO: Os comandos Random requerem a biblioteca Statistics and Machine Learning Toolbox. Caso você não tenha a biblioteca, use o comando randn no lugar.
+ATENÇÃO: Os comandos Random requerem a Statistics and Machine Learning Toolbox. Caso você não tenha a biblioteca, use o comando randn no lugar.
