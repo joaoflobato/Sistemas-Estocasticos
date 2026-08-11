@@ -1,0 +1,50 @@
+mma_ruido_branco
+%% Distancias de Wasserstein
+
+
+dimensoes = 1:4;
+ordem = 2;
+intervalo = 1;
+duracao_efetiva = duracao - intervalo;
+indices_intervalo = intervalo*fs;
+instantes = 0:intervalo:duracao_efetiva-intervalo;
+
+
+
+for m_atual = dimensoes
+
+W = zeros(1,duracao_efetiva);
+indice_wass = 1;
+
+for instante_atual = instantes
+    
+    if m_atual == 1
+        indices1 = instante_atual*fs+1;
+    else
+        indices1 = (instante_atual*fs+1)*ones(1,m_atual) + [0:m_atual-1];
+    end
+
+    indices2 = indices1 + indices_intervalo-1;
+
+    respostas1 = realizacoes_respostas(:,indices1)';
+    respostas2 = realizacoes_respostas(:,indices2)';
+
+
+    W(indice_wass) = wasserstein_distance_nd(respostas1,respostas2,ordem);
+    indice_wass = 1 + indice_wass;
+
+end
+
+colororder(minhasCores)
+hold on
+semilogy(instantes,W+m_atual*2*10^-5,LineWidth=3)
+
+end
+
+
+set(gca,'fontsize',15)
+ylim([0,1.5*max(W)])
+
+title(["$\mathbf{x}$ Wasserstein Distances";"for $\Delta t = 1$ s and $\zeta = 0.05$"],FontSize=20,Interpreter="latex")
+xlabel("$t_1$ [s]",FontSize=20,Interpreter="latex")
+ylabel("$\hat{\mathcal{W}}_{2,m}(\mathbf{x}_1,\mathbf{x}_2)$",FontSize=20,Interpreter="latex")
